@@ -78,7 +78,12 @@ brew install hashicorp/tap/terraform
 ```
 ### Linux
 ```bash
-sudo apt-get install terraform -y
+sudo rm -f /usr/local/bin/terraform && \
+curl -LO https://releases.hashicorp.com/terraform/1.14.3/terraform_1.14.3_linux_amd64.zip && \
+sudo apt install -y unzip && \
+unzip terraform_1.14.3_linux_amd64.zip && \
+sudo mv terraform /usr/local/bin/ && \
+rm terraform_1.14.3_linux_amd64.zip
 ```
 !Verify:
 
